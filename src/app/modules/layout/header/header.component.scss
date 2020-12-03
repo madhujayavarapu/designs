@@ -1,0 +1,20 @@
+.nav {
+  display: flex;
+
+  &__item {
+    padding: 0 .5rem;
+  }
+
+  &__link {
+    color: #bfbfbf;
+    user-select: none;
+    -webkit-user-drag: none;
+    cursor: pointer;
+    font-size: 1.1rem;
+
+    &:hover,
+    &.active {
+      color: #fff;
+    }
+  }
+}
