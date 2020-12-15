@@ -1,0 +1,65 @@
+<!-- <mat-grid-list cols="4" rowHeight="100px">
+  <mat-grid-tile
+      *ngFor="let tile of tiles"
+      [colspan]="tile.cols"
+      [rowspan]="tile.rows"
+      [style.background]="tile.color">
+    {{tile.text}}
+  </mat-grid-tile>
+</mat-grid-list> -->
+
+<div class="home">
+  <mat-carousel
+    timings="250ms ease-in"
+    [autoplay]="true"
+    interval="5000"
+    color="primary"
+    maxWidth="auto"
+    proportion="25"
+    slides="5"
+    [loop]="true"
+    [hideArrows]="false"
+    [hideIndicators]="false"
+    [useKeyboard]="true"
+    [useMouseWheel]="false"
+    orientation="ltr"
+  >
+    <mat-carousel-slide
+      #matCarouselSlide
+      *ngFor="let slide of slides; let i = index"
+      [image]="slide.image"
+      overlayColor="#00000040"
+      [hideOverlay]="false"
+    ></mat-carousel-slide>
+  </mat-carousel>
+
+  <h4 class="home__title">Featured Products</h4>
+  <app-product-grid-list [products]="products"></app-product-grid-list>
+  <!-- <div class="products">
+    <div class="product" *ngFor="let product of products;">
+      <img [src]="product.image" alt="{{product.name}}" class="product__image" />
+      <p class="product__featured">Featured</p>
+      <div class="product__info">
+        <div>
+          <h2 class="product__name">{{ product.name }}</h2>
+          <h4 class="product__category">{{ product.category }}</h4>
+        </div>
+        <div>
+          <h3 class="product__price">{{ product.price | currency }}/-</h3>
+        </div>
+      </div>
+      <div class="product__actions">
+        <button mat-icon-button class="wishlist">
+          <mat-icon>favorite_border</mat-icon>
+        </button>
+        <button mat-raised-button color="accent">
+          <mat-icon>add_shopping_cart</mat-icon>
+          <span class="text">Add to Cart</span>
+        </button>
+      </div>
+    </div>
+  </div> -->
+
+  <h4 class="home__title">Best Sellers</h4>
+  <app-product-grid-list [products]="products"></app-product-grid-list>
+</div>

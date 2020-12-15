@@ -6,7 +6,23 @@
         routerLinkActive="active">Home</a></li>
     <li class="nav__item"><a class="nav__link" matRipple matRippleColor="#fff" [routerLink]="['', 'products']"
         routerLinkActive="active">Products</a></li>
-    <li class="nav__item"><a class="nav__link" matRipple matRippleColor="#fff" [routerLink]="['', 'contact']"
-        routerLinkActive="active">Contact</a></li>
+    <li class="nav__item"><a class="nav__link" matRipple matRippleColor="#fff" [routerLink]="['', 'product-detail', 'product-id']"
+        routerLinkActive="active">Cart</a></li>
+    <li class="nav__item"><a class="nav__link" matRipple matRippleColor="#fff" [routerLink]="['', 'add-product']"
+      routerLinkActive="active">Add Product</a></li>
+    <li class="nav__item"><a class="nav__link" matRipple matRippleColor="#fff" [routerLink]="['', 'order-tracking']"
+      routerLinkActive="active">Track Order</a></li>
   </ul>
+
+  <div class="nav nav--right">
+    <button mat-icon-button>
+      <mat-icon matBadge="10" matBadgeColor="accent" matBadgePosition="above after">notifications</mat-icon>
+    </button>
+    <button mat-icon-button (click)="openCart()">
+      <mat-icon matBadge="8" matBadgeColor="accent" matBadgePosition="above after">shopping_cart</mat-icon>
+    </button>
+    <button mat-icon-button>
+      <mat-icon>account_circle</mat-icon>
+    </button>
+  </div>
 </mat-toolbar>

@@ -1,0 +1,23 @@
+<div class="product">
+  <img [src]="product.image" alt="{{product.name}}" class="product__image" />
+  <p class="product__featured" *ngIf="product.featured">Featured</p>
+  <div class="product__info">
+    <div>
+      <h2 class="product__name">{{ product.name }}</h2>
+      <h4 class="product__category">{{ product.category }}</h4>
+    </div>
+    <div>
+      <h3 class="product__price">{{ product.price | currency }}/-</h3>
+    </div>
+  </div>
+  <div class="product__actions">
+    <button mat-icon-button class="wishlist">
+      <mat-icon>favorite_border</mat-icon>
+      <!-- <span class="text">Wishlist</span> -->
+    </button>
+    <button mat-raised-button color="accent">
+      <mat-icon>add_shopping_cart</mat-icon>
+      <span class="text">Add to Cart</span>
+    </button>
+  </div>
+</div>

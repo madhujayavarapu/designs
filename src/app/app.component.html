@@ -1,1 +1,101 @@
 <app-layout></app-layout>
+
+<div class="backdrop" [class.backdrop--show]="!!showCartDrawer">
+  <div class="cart" [class.cart--open]="!!showCartDrawer">
+    <!-- <div class="cart__content">
+      <div class="cart__item" *ngFor="let p of products;">
+        <div>
+          <img [src]="p.image" alt="{{p.name}}" class="cart__item-image" />
+          <div>
+            <h4>{{p.name}}</h4>
+            <p>{{p.category}}</p>
+          </div>
+        </div>
+        <div>
+          <button mat-raised-button>-</button>
+          1
+          <button mat-raised-button>+</button>
+        </div>
+        <div>
+          <p>1 X 1400 = 1400/-</p>
+        </div>
+      </div>
+    </div> -->
+
+    <div class="cart__header">
+      <h2>Cart</h2>
+      <button mat-icon-button color="warn" (click)="closeCart()">
+        <mat-icon>close</mat-icon>
+      </button>
+    </div>
+
+    <div class="cart__info">
+      <table mat-table [dataSource]="products">
+
+        <!-- Position Column -->
+        <ng-container matColumnDef="image">
+          <th mat-header-cell *matHeaderCellDef> Image </th>
+          <td mat-cell *matCellDef="let element" style="padding: .25rem 0;">
+            <img [src]="element.image" alt="{{element.name}}" class="cart__item-image">
+          </td>
+          <!-- <td mat-footer-cell *matFooterCellDef></td> -->
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef> Name </th>
+          <td mat-cell *matCellDef="let element">
+            <h4 class="cart__item-name">{{element.name}}</h4>
+            <p class="cart__item-category">{{ element.category }}</p>
+          </td>
+          <!-- <td mat-footer-cell *matFooterCellDef>Total</td> -->
+        </ng-container>
+
+        <!-- Quantity Column -->
+        <ng-container matColumnDef="qty">
+          <th mat-header-cell *matHeaderCellDef> Qty </th>
+          <td mat-cell *matCellDef="let element">
+            <button mat-icon-button color="warn">
+              <mat-icon>remove_circle_outline</mat-icon>
+            </button>
+            5
+            <button mat-icon-button color="primary">
+              <mat-icon>add_circle_outline</mat-icon>
+            </button>
+          </td>
+          <!-- <td mat-footer-cell *matFooterCellDef>12 Items</td> -->
+        </ng-container>
+
+        <!-- Price Column -->
+        <ng-container matColumnDef="price">
+          <th mat-header-cell *matHeaderCellDef> Price </th>
+          <td mat-cell *matCellDef="let element"> 5 x {{element.price}} = {{2*element.price | currency}} </td>
+          <!-- <td mat-footer-cell *matFooterCellDef> {{50000 | currency}} </td> -->
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        <!-- <tr mat-footer-row *matFooterRowDef="displayedColumns; sticky: true"></tr> -->
+      </table>
+    </div>
+
+    <!-- <div class="cart__empty">
+      <img src="assets/images/empty-cart.svg" alt="Empty" class="cart__empty-image" />
+      <h3 class="cart__empty-text">You have no items in cart</h3>
+      <button mat-raised-button color="accent" (click)="closeCart()">Continue Shopping</button>
+    </div> -->
+
+
+    <div class="cart__footer">
+      <div class="cart__total">
+        <p class="cart__total-item-count">Total: 4 Item(s)</p>
+        <p class="cart__total-price">{{500 | currency }}</p>
+      </div>
+
+      <div class="cart__actions">
+        <!-- <button mat-raised-button (click)="closeCart()">Continue Shopping</button> -->
+        <button mat-raised-button color="accent" (click)="closeCart()">Place Order</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,35 @@
+<div class="add-product mat-elevation-z28">
+  <mat-card>
+    <mat-card-content>
+      <h2 class="add-product__title">Add Product</h2>
+      <mat-form-field appearance="fill">
+        <mat-label>Name</mat-label>
+        <input matInput placeholder="Samsung Note10">
+      </mat-form-field>
+      <div class="d-flex">
+        <mat-form-field appearance="fill">
+          <mat-label>Category</mat-label>
+          <mat-select placeholder="Select Category">
+            <mat-option value="option">Option</mat-option>
+          </mat-select>
+          <!-- <input matInput placeholder="Category"> -->
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Amount</mat-label>
+          <input matInput placeholder="500" class="text-right" type="number">
+          <span matPrefix>$&nbsp;</span>
+          <span matSuffix>.00</span>
+        </mat-form-field>
+      </div>
+      <mat-form-field appearance="fill">
+        <mat-label>Description</mat-label>
+        <textarea matInput placeholder="Description"></textarea>
+      </mat-form-field>
+      <mat-checkbox>Is product available now.?</mat-checkbox>
+      <div class="d-flex add-product__actions">
+        <button mat-raised-button>Reset</button>
+        <button mat-raised-button color="accent">Add Product</button>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

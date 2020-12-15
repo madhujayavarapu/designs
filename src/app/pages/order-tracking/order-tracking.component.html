@@ -1,0 +1,39 @@
+<div class="order-tracking" *ngFor="let order of [1,2,3,4,5,6]">
+  <!-- <h2 class="order-tracking__title">Order Tracking</h2> -->
+  <div class="order-tracking__meta">
+    <p class="order-tracking__meta-id">OrderId: #71625345</p>
+    <p class="order-tracking__meta-etd">Estimated Delivery: 19 Dec, 2020</p>
+  </div>
+  <ul class="order-tracking__steps">
+    <li class="order-tracking__step completed">
+      <h4>Order Placed</h4>
+      <p>Dec 6, 2020 12:50PM</p>
+    </li>
+    <li class="order-tracking__step completed">
+      <h4>Order Confirmed</h4>
+      <p>Dec 6, 2020 12:50PM</p>
+    </li>
+    <li class="order-tracking__step">
+      <h4>Shipped</h4>
+    </li>
+    <li class="order-tracking__step">
+      <h4>Out for Delivery</h4>
+    </li>
+    <li class="order-tracking__step">
+      <h4>Devlivered</h4>
+    </li>
+  </ul>
+
+  <div class="order-tracking__info">
+    <div class="cart__total">
+      <p class="cart__total-item-count">Total: 4 Item(s)</p>
+      <p class="cart__total-price">{{500 | currency }}</p>
+    </div>
+    <div>
+      <button mat-raised-button>View Order Details</button>
+      <button mat-raised-button color="warn" style="margin: 0 10px;">Cancel Order</button>
+    </div>
+  </div>
+
+
+</div>

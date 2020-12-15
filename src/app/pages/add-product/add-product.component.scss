@@ -1,0 +1,37 @@
+.add-product {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 1rem;
+
+  * {
+    width: 100%;
+  }
+
+  .d-flex {
+    display: flex;
+
+    *:not(:last-child) {
+      margin-right: 15px;
+    }
+  }
+
+  &__title {
+    margin-bottom: .75rem;
+    text-align: center;
+  }
+
+  &__actions {
+    margin-top: .5rem;
+  }
+
+  .text-right {
+    text-align: right;
+  }
+}
+
+@media (max-width: 500px) {
+  .d-flex:not(.add-product__actions) {
+    display: block !important;
+  }
+}

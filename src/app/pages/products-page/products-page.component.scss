@@ -1,0 +1,45 @@
+$filter-width: 200px;
+
+.products-page {
+  &__filter {
+    padding: .5rem;
+    width: $filter-width;
+    position: fixed;
+    left: 0;
+    top: 64px;
+    height: calc(100vh - 64px);
+    background: #e9e9e9;
+    font-size: .8rem;
+
+    &-title {
+      color: #7d7d7d;
+      font-size: .8rem;
+      font-weight: 500;
+      letter-spacing: .02rem;
+      margin: .75rem 0;
+    }
+
+    .price {
+      &__input {
+        width: 100%;
+        padding: 0;
+
+        .mat-form-field-appearance-fill {
+          .mat-form-field-flex {
+            padding: .25px;
+            padding-bottom: 0;
+          }
+        }
+      }
+    }
+
+    .mat-radio-button {
+      margin: .25rem;
+    }
+  }
+
+  &__content {
+    padding: .75rem;
+    margin-left: $filter-width;
+  }
+}

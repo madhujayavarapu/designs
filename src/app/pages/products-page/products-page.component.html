@@ -1,0 +1,17 @@
+<div class="products-page">
+  <aside class="products-page__filter">
+    <h4 class="products-page__filter-title">Price</h4>
+    <ngx-slider [(value)]="minValue" [(highValue)]="maxValue" [options]="options"></ngx-slider>
+    <h4 class="products-page__filter-title">Category</h4>
+    <mat-radio-group
+      aria-labelledby="category-radio-group"
+      class="category-radio-group">
+      <mat-radio-button class="category" *ngFor="let category of categories" [value]="category.key">
+        {{category.name}}
+      </mat-radio-button>
+    </mat-radio-group>
+  </aside>
+  <div class="products-page__content">
+    <app-product-grid-list [products]="products"></app-product-grid-list>
+  </div>
+</div>

@@ -1,0 +1,21 @@
+<div class="product-detail">
+  <div class="product-detail__info">
+    <img [src]="productInfo.image" alt="{{ productInfo.name }}">
+    <div>
+      <h2>{{ productInfo.name }}</h2>
+      <p>{{ productInfo.category }}</p>
+      <p>Description</p>
+      <p>{{ productInfo.description || '-' }}</p>
+
+      <h3>{{ productInfo.price | currency }}</h3>
+
+      <div>
+        <button mat-button>Add to wishlist</button>
+        <button mat-raised-button>Add to Cart</button>
+      </div>
+    </div>
+  </div>
+  <div class="product-reviews">
+
+  </div>
+</div>
